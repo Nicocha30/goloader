@@ -45,6 +45,7 @@ go tool compile $GOPATH/src/github.com/pkujhd/goloader/examples/http/http.go
 ./loader -o http.o -run main.main
 
 go install github.com/pkujhd/goloader/examples/basecontext
+go tool compile -I $GOPATH/pkg/`go env GOOS`_`go env GOARCH` $GOPATH/src/github.com/pkujhd/goloader/examples/inter/inter.go
 ./loader -o $GOPATH/pkg/`go env GOOS`_`go env GOARCH`/github.com/pkujhd/goloader/examples/basecontext.a:github.com/pkujhd/goloader/examples/basecontext -o inter.o
 
 #build multiple go files
